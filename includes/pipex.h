@@ -6,15 +6,15 @@
 /*   By: tlachman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:36:15 by tlachman          #+#    #+#             */
-/*   Updated: 2023/11/30 15:36:17 by tlachman         ###   ########.fr       */
+/*   Updated: 2023/11/30 16:03:18 by tlachman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIPEX_H
 # define PIPEX_H
 
-#include <unistd.h>
-#include <stdio.h>
+# include <unistd.h>
+# include <stdio.h>
 
 //          PIPEX
 
