@@ -1,33 +1,34 @@
-cc = gcc
-CFLAGS = -Wall -Werror -Wextra -g
-NAME = pipex
+SRCS			=	ft_cmds.c \
+					ft_find_path.c \
+					ft_frees.c \
+					ft_pipex.c \
 
-SRC_PATH = src/
-OBJ_PATH = obj/
 
-SRC = 
+OBJS			= $(SRCS:.c=.o)
 
-SRCS = $(addprefix $(SRC_PATH), $(SRC))
-OBJ = $(SRC:.c=o)
-OBJS = $(addprefix $(OBJ_PATH), $(OBJ))
-INCS = -I ./includes/
+CC			= gcc
+RM			= rm -f
 
-all : $(OBJ_PATH) $(NAME)
+CFLAGS			= -Wall -Wextra -Werror -I.
 
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	$(CC) $(CFLAGS) -c $< -o $@ $(INCS)
-$(OBJ_PATH):
-	mkdir $(OBJ_PATH)
+NAME			= pipex
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+LIB				= libft.a
 
-clean :
-	rm -rf $(OBJ_PATH)
+LIBPATH			= libft/
 
-fclean: clean
-	rm -rf $(NAME)
+all:			$(NAME)
 
-re : fclean all
+$(NAME):		$(OBJS)
+				make -C $(LIBPATH)
+				gcc $(CFLAGS) -o $(NAME) $(SRCS) $(LIBPATH)$(LIB)
 
-.PHONY: all clean fclean re
+clean:
+				rm -f $(OBJS) && make -C $(LIBPATH) clean
+
+fclean:			clean
+				rm -f $(NAME) && make -C $(LIBPATH) fclean
+
+re:			fclean $(NAME)
+
+.PHONY:			all clean fclean re
