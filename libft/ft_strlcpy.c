@@ -6,7 +6,7 @@
 /*   By: event <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 12:25:07 by event             #+#    #+#             */
-/*   Updated: 2023/03/14 12:25:09 by event            ###   ########.fr       */
+/*   Updated: 2023/12/28 10:49:12 by tlachman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		dst[i] = src[i];
 		i++;
 	}
-		dst[i] = '\0';
+	dst[i] = '\0';
 	return (ft_strlen((char *)src));
 }
